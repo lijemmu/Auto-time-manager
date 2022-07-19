@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Auto time manager",
+  "description": "Mananging your time...",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "frontend/images/icon.png",
+    "default_popup": "frontend/popup.html"
+  }
+}
