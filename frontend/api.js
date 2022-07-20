@@ -49,3 +49,19 @@ function extractTime(datetime){
 
 
 // maybe alert the user on the frontend that the task was successful (or if there was an error)
+
+
+
+
+// Dummy data
+// key = summary
+// value = [endTime, startTime, TimeZone, colorID]
+// {
+//     'Do Hw': ['2022-07-20T22:10:00-04:00', '2022-07-20T20:10:00-04:00', 'America/New_York', '10'], 
+//     'laundary': ['2022-07-20T18:05:00-04:00', '2022-07-20T17:25:00-04:00', 'America/New_York', '10'], 
+//     'read': ['2022-07-20T09:05:00-04:00', '2022-07-20T08:50:00-04:00', 'America/New_York', '10'], 
+//     'run': ['2022-07-20T08:40:00-04:00', '2022-07-20T08:10:00-04:00', 'America/New_York', '10'], 
+//     'study': ['2022-07-20T14:55:00-04:00', '2022-07-20T14:10:00-04:00', 'America/New_York', '10'], 
+//     'test': ['2022-07-20T12:05:00-04:00', '2022-07-20T11:50:00-04:00', 'America/New_York', '10'], 
+//     'work on project': ['2022-07-20T11:40:00-04:00', '2022-07-20T11:10:00-04:00', 'America/New_York', '10']
+// }
