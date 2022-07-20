@@ -1,7 +1,42 @@
-// first step: grab calendar data from API (work with Fernanda to see how this is done)
+// first step: grab calendar data from API concerning the events already in the user's calendar for the day
+
 
 
 // function: format data from user's calendar into JSON to send to Flask app
+function extractSchedule(calendarEvents){
+    let theSchedule = {}
+
+    for(let i=0; i<calendarEvents.length; i++){
+        let task = calendarEvents[i]
+
+        let taskName = task.summary
+
+        let startTime = extractTime(task.start.dateTime)
+        let endTime = extractTime(task.end.dateTime)
+
+        theSchedule[taskName] = {
+            start: startTime,
+            end: endTime
+        }
+
+    }
+
+    return theSchedule
+}
+
+// helper function that extracts time in the 'HH:MM' format from a datetime string
+function extractTime(datetime){
+    let dateOptions = {
+        minimumIntegerDigits: 2,
+        useGrouping: false
+    }
+
+    let theDate = new Date(datetime)
+    let theHour = theDate.getHours().toLocaleString('en-us', dateOptions)
+    let theMinutes = theDate.getMinutes().toLocaleString('en-us', dateOptions)
+
+    return `${theHour}:${theMinutes}`
+}
 
 
 // function (triggered by button): send the data to Flask app
