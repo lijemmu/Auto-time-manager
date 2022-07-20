@@ -1,0 +1,110 @@
+[
+    {
+        "kind": "calendar#event",
+        "etag": "\"3311470158500000\"",
+        "id": "cksjic9pckq68b9mc5h30b9kckq30bb1c8p6abb2cgr3cob6ckp32c9k6c",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=Y2tzamljOXBja3E2OGI5bWM1aDMwYjlrY2txMzBiYjFjOHA2YWJiMmNncjNjb2I2Y2twMzJjOWs2YyBqb3NoZmVsaTYxM0Bt",
+        "created": "2022-06-20T14:24:38.000Z",
+        "updated": "2022-06-20T14:24:39.250Z",
+        "summary": "Cucciara Dentist",
+        "creator": {
+            "email": "merarifeli@gmail.com"
+        },
+        "organizer": {
+            "email": "family07870150023156603755@group.calendar.google.com",
+            "displayName": "Family"
+        },
+        "start": {
+            "dateTime": "2022-08-15T15:00:00-04:00",
+            "timeZone": "America/New_York"
+        },
+        "end": {
+            "dateTime": "2022-08-15T16:00:00-04:00",
+            "timeZone": "America/New_York"
+        },
+        "iCalUID": "cksjic9pckq68b9mc5h30b9kckq30bb1c8p6abb2cgr3cob6ckp32c9k6c@google.com",
+        "sequence": 0,
+        "attendees": [
+            {
+                "email": "isaiahfeli77@gmail.com",
+                "displayName": "Isaiah Feli",
+                "responseStatus": "needsAction"
+            },
+            {
+                "email": "joshfeli613@gmail.com",
+                "self": true,
+                "responseStatus": "needsAction"
+            }
+        ],
+        "hangoutLink": "https://meet.google.com/qvu-hyap-rsx",
+        "conferenceData": {
+            "createRequest": {
+                "requestId": "68r38cb574qjib9o6op30b9kchgm4bb16kqm4b9m6hij0d9ic9im2d35c8",
+                "conferenceSolutionKey": {
+                    "type": "hangoutsMeet"
+                },
+                "status": {
+                    "statusCode": "success"
+                }
+            },
+            "entryPoints": [
+                {
+                    "entryPointType": "video",
+                    "uri": "https://meet.google.com/qvu-hyap-rsx",
+                    "label": "meet.google.com/qvu-hyap-rsx"
+                }
+            ],
+            "conferenceSolution": {
+                "key": {
+                    "type": "hangoutsMeet"
+                },
+                "name": "Google Meet",
+                "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+            },
+            "conferenceId": "qvu-hyap-rsx"
+        },
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3287287171669000\"",
+        "id": "6gp34php6dhjeb9i60r36b9k68rmcbb271im6bb6ccpj8pb56goj8d1l6g",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NmdwMzRwaHA2ZGhqZWI5aTYwcjM2YjlrNjhybWNiYjI3MWltNmJiNmNjcGo4cGI1NmdvajhkMWw2ZyBqb3NoZmVsaTYxM0Bt",
+        "created": "2022-01-31T15:39:45.000Z",
+        "updated": "2022-01-31T15:39:45.956Z",
+        "summary": "Orthodontist Appt",
+        "creator": {
+            "email": "joshfeli613@gmail.com",
+            "self": true
+        },
+        "organizer": {
+            "email": "joshfeli613@gmail.com",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2022-12-19T10:00:00-05:00",
+            "timeZone": "America/New_York"
+        },
+        "end": {
+            "dateTime": "2022-12-19T10:30:00-05:00",
+            "timeZone": "America/New_York"
+        },
+        "iCalUID": "6gp34php6dhjeb9i60r36b9k68rmcbb271im6bb6ccpj8pb56goj8d1l6g@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": false,
+            "overrides": [
+                {
+                    "method": "popup",
+                    "minutes": 60
+                }
+            ]
+        },
+        "eventType": "default"
+    }
+]
