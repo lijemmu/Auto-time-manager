@@ -1,0 +1,77 @@
+h1 {
+  font-size: 35px;
+}
+
+body {
+  min-width: 500px;
+  min-height: 1500px;
+}
+
+.dates-content {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 15px;
+}
+
+#control {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: green;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.small-icon {
+  max-width: 15px;
+  max-height: auto;
+  object-fit: contain;
+}
+
+.duration-clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.upper,
+.lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.one-task {
+  width: 274px;
+  height: 99px;
+  left: 736px;
+  top: 534px;
+  border-style: solid;
+  border-color: black;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#time-left {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+#save-button {
+  display: flex;
+  justify-content: flex-end;
+}

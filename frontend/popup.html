@@ -16,24 +16,34 @@
         <h1>Sat. July 15th.</h1>
         <p>I want to be done by __</p>
       </div>
-      <div class="time left">
-        <p>5h available</p>
+      <div id="time-left">
+        <div>
+          <p>5h available</p>
+        </div>
       </div>
     </div>
 
     <div class="tasks">
       <div id="control">
         <h2>Tasks</h2>
-        <img src="images/gc.png" />
-        <button>new task</button>
+        <div class="buttons">
+          <img class="logo" src="images/gc.png" />
+          <button>new task</button>
+        </div>
       </div>
       <ul>
         <div class="one-task">
-          <p class="task-title">Do Yoga</p>
-          <p class="task-length">July 5th, 5:00 PM - 5:00 PM</p>
-          <p class="task-duration">1h</p>
-          <img src="images/clock.png" />
-          <img src="images/pencil.png" />
+          <div class="upper">
+            <p>Do Yoga</p>
+            <div class="duration-clock">
+              <p>1h</p>
+              <img class="small-icon" src="images/clock.png" />
+            </div>
+          </div>
+          <div class="lower">
+            <p>July 5th, 5:00 PM - 5:00 PM</p>
+            <img class="small-icon" src="images/pencil.png" />
+          </div>
         </div>
       </ul>
     </div>
