@@ -149,10 +149,10 @@ def schedule():
           if int(i[2]) > v[0]:
             task_name = str(k)
             duration = v[0]
-            api_ready_task(task_name, duration, i[0]) #taskname, duration, start_time
+            api_ready_task(task_name, duration, i[0] + margin) #taskname, duration, start_time
 
             # modify free time slots
-            i[0] = i[0] + duration + margin
+            i[0] = i[0] + duration 
             i[2] = i[1] - i[0]
             i[4] = i[4] + 1
 
@@ -166,10 +166,10 @@ def schedule():
           if int(free_slots_array[i][2]) > v[0]:
             task_name = str(k)
             duration = v[0]
-            api_ready_task(task_name, duration, free_slots_array[i][0]) #taskname, duration, start_time
+            api_ready_task(task_name, duration, free_slots_array[i][0] + margin) #taskname, duration, start_time
 
             # modify free time slots
-            free_slots_array[i][0] = free_slots_array[i][0] + duration + margin
+            free_slots_array[i][0] = free_slots_array[i][0] + duration 
             free_slots_array[i][2] = free_slots_array[i][1] - free_slots_array[i][0]
             free_slots_array[i][4] = free_slots_array[i][4] + 1
             # remove task from task dict
@@ -184,7 +184,6 @@ def airy_slots():
   for i in range(len(free_slots_array)):
     a.append([i, free_slots_array[i][4]])
 
-  print(a)
   a.sort(key=lambda x: x[1])
   
   b = []
@@ -193,8 +192,7 @@ def airy_slots():
   for i in a:
     b.append(i[0])
   
-  print(b)
-  print("")    
+  
   return(b)
 
 def api_ready_task(task_name, duration, task_start_time):
@@ -234,8 +232,8 @@ def main():
   create_free_slots_array()
 
   schedule()
-  print(free_slots_array)
-  print("")
+  # print(free_slots_array)
+  # print("")
   for i in ready_tasks:
     print(i)
     print("")
