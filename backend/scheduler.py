@@ -100,7 +100,7 @@ def create_free_slots():
 
 
 def create_free_slots_array():
-  i = margin
+  i = 0
   x = 0
   while x < len(minutified)-1:
     p = preference(minutified[x])
@@ -152,7 +152,7 @@ def schedule():
             api_ready_task(task_name, duration, i[0] + margin) #taskname, duration, start_time
 
             # modify free time slots
-            i[0] = i[0] + duration 
+            i[0] = i[0] + duration + margin
             i[2] = i[1] - i[0]
             i[4] = i[4] + 1
 
@@ -169,7 +169,7 @@ def schedule():
             api_ready_task(task_name, duration, free_slots_array[i][0] + margin) #taskname, duration, start_time
 
             # modify free time slots
-            free_slots_array[i][0] = free_slots_array[i][0] + duration 
+            free_slots_array[i][0] = free_slots_array[i][0] + duration + margin
             free_slots_array[i][2] = free_slots_array[i][1] - free_slots_array[i][0]
             free_slots_array[i][4] = free_slots_array[i][4] + 1
             # remove task from task dict
@@ -230,10 +230,10 @@ def main():
   turn_to_min()
   create_free_slots()
   create_free_slots_array()
-
+  print(free_slots_array)
+  print("")
   schedule()
-  # print(free_slots_array)
-  # print("")
+
   for i in ready_tasks:
     print(i)
     print("")
