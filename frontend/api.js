@@ -42,7 +42,7 @@ function extractTime(datetime){
 // function (triggered by button): send the data to Flask app
 
 
-// get the response from the Flask app, which should hopefully be JSON formatted in the same way
+// get the response from the Flask app, which should hopefully be JSON formatted to input directly into Google calendar
 
 
 // post the data to the calendar API to update the user's calendar
