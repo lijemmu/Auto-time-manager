@@ -6,49 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=4.0" />
     <title>Auto-time-manager Extension</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div class="header"></div>
-
-    <div class="dates-content">
-      <div>
-        <h1>Sat. July 15th.</h1>
-        <p>I want to be done by __</p>
-      </div>
-      <div id="time-left">
-        <div>
-          <p>5h available</p>
+    <div id="main-screen">
+      <div class="container-1">
+        <div class="product-name">
+          <h1>the name</h1>
+          <h3>a short phrase</h3>
         </div>
-      </div>
-    </div>
 
-    <div class="tasks">
-      <div id="control">
-        <h2>Tasks</h2>
-        <div class="buttons">
-          <img class="logo" src="images/gc.png" />
-          <button>new task</button>
-        </div>
-      </div>
-      <ul>
-        <div class="one-task">
-          <div class="upper">
-            <p>Do Yoga</p>
-            <div class="duration-clock">
-              <p>1h</p>
-              <img class="small-icon" src="images/clock.png" />
+        <div class="tasks">
+          <h2>Tasks</h2>
+          <p>I want to be done by 8:00 PM</p>
+          <ul>
+            <div class="one-task">
+              <div class="upper">
+                <p>Do Yoga</p>
+                <div class="duration-clock">
+                  <p>1h</p>
+                  <img class="small-icon" src="images/clock.png" />
+                </div>
+              </div>
+              <div class="lower">
+                <p>July 5th, 5:00 PM - 5:00 PM</p>
+                <img class="small-icon" src="images/pencil.png" />
+              </div>
             </div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-2">
+        <div class="time-content">
+          <div id="time-left">
+            <div class="time-hours">
+              <p>5h</p>
+            </div>
+            <p>available</p>
           </div>
-          <div class="lower">
-            <p>July 5th, 5:00 PM - 5:00 PM</p>
-            <img class="small-icon" src="images/pencil.png" />
+
+          <div class="current-date">
+            <p>Sat. July 15th</p>
           </div>
         </div>
-      </ul>
-    </div>
 
-    <button id="save-button">Done</button>
+        <div id="control">
+          <div class="buttons">
+            <button>
+              back to
+              <img class="logo" src="images/gc.png" />
+            </button>
+            <button>
+              <img class="logo" src="images/plus.png" />
+              new task
+            </button>
+          </div>
+        </div>
+
+        <button id="save-button">save</button>
+      </div>
+    </div>
 
     <script></script>
   </body>

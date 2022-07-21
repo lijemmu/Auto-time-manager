@@ -1,19 +1,51 @@
 h1 {
-  font-size: 35px;
+  width: 310px;
+  height: 77px;
+  left: 66px;
+  top: 85px;
+
+  font-family: "Pacifico", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(90deg, #d0ed91 15%, rgba(45, 104, 88, 0) 103.39%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html {
+  background-color: white;
 }
 
 body {
-  min-width: 500px;
-  min-height: 1500px;
+  margin: 0px 0px 0px 0px;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(0deg, #e6f3ed, #e6f3ed);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
 }
 
-.dates-content {
-  width: 600px;
+#main-screen {
   display: flex;
   flex-direction: row;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  text-align: center;
-  font-size: 15px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.container-2 {
+  margin-top: 30px;
 }
 
 #control {
@@ -63,12 +95,60 @@ body {
   justify-content: space-around;
 }
 
-#time-left {
-  width: 100px;
-  height: 100px;
-}
-
 #save-button {
   display: flex;
   justify-content: flex-end;
+}
+
+.tasks {
+  margin-top: 90px;
+}
+
+.time-content {
+  width: 200px;
+  height: 220px;
+  left: 510px;
+  top: 54px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 35px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+#time-left {
+  min-width: 100px;
+  min-height: 100px;
+  border: 5px solid #c8e192;
+  border-radius: 50%;
+  align-content: center;
+  color: #418b77;
+  font-weight: 700;
+  padding: 0px 0px 0px 0px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.current-date {
+  height: 80px;
+  width: 150px;
+  font-weight: 700;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #2d6858;
+  margin-top: 10px;
+}
+
+.time-hours {
+  font-size: 35px;
+  height: 38px;
+  line-height: 10px;
 }
