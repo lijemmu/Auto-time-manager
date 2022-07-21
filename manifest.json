@@ -1,10 +1,18 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Auto time manager",
   "description": "Mananging your time...",
   "version": "1.0",
-  "browser_action": {
+  "action": {
     "default_icon": "frontend/images/icon.png",
     "default_popup": "frontend/popup.html"
-  }
+  },
+  "key" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkJklTUFjLpTh3jvqxw8xwnnYtLsJYdD4A5Q7d6lFzINf74JLktLtczbtWgsoIdz2tAB17Jw5p60QmuFqgc0HnQNgdfh6ntAc3Ce9RZPBY/Bj64Gf8oGvIpDAdcH5MKPEKxy5pLM6QwXue1ornIEdpXl8TF2oIon84J4ZCFjbWPPF7T4rVKNy/++oKVvQ++YdEW372hp1I9XJgWmH3lFpVWMWgSjDoyQRJ2w0bvs96yLeePTervH+d3GbHat1/mkHTlfld47mYR9F8bPzqe+tjV3FXOeZ2z0IWszJ337UN+fqRtBrbyqo2z1byNHARIJJ4CMMOciZ2pAgNn75rpltlwIDAQAB",
+  "oauth2": {
+    "client_id": "849656288714-j252nr2b0arfinuvc2gplc62vtnhakaa.apps.googleusercontent.com",
+    "scopes":["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.events.readonly"]
+  },
+  "permissions": [
+    "identity"
+  ]
 }
