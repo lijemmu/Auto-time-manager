@@ -86,12 +86,28 @@ body {
   justify-content: space-between;
 }
 
+.upper {
+  height: 45px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 17px;
+}
+
+.lower {
+  height: 30px;
+  font-size: 13px;
+}
+
 .one-task {
   width: 274px;
-  height: 99px;
-  left: 736px;
-  top: 534px;
+  height: 80px;
   border-style: solid;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: #59ba89;
+  padding: 15px 15px;
+  margin-bottom: 10px;
 }
 
 .buttons {
