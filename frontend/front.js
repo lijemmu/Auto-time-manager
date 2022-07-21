@@ -29,16 +29,18 @@ function loadTasks() {
     var new_div = document.createElement("div");
     tasks.appendChild(new_div);
     new_div.class = "one-task";
+    new_div.id = currentTasksList[i].id.toString();
+
     new_div.innerHTML =
       '<div class="one-task"><div class="upper"> <p class="task-activity">' +
       currentTasksList[i].activity +
       '</p> <div class="duration-clock"> <p class="task-duration">' +
       currentTasksList[i].duration +
       "h" +
-      '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
+      '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower" id ="bambino"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><img class="small-icon" src="images/pencil.png" /></div></div>';
+      '</p><button class="edit-button"> <img class="small-icon" src="images/pencil.png"></button></div></div>';
 
     if (tasks.childElementCount > currentTasksList.length) {
       for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {
@@ -51,11 +53,14 @@ function loadTasks() {
 document
   .querySelector("#make-task")
   .addEventListener("submit", function (event) {
+    var randomID = Math.random().toString(16).slice(2);
+
     var oneTask = {
       activity: document.getElementById("activity").value,
       duration: document.getElementById("duration").value,
       preference: document.getElementById("preference").value,
       date: "July 5th",
+      id: "123456789",
     };
 
     tasksList[tasksList.length] = oneTask;
@@ -70,6 +75,19 @@ document.querySelector("#new-task").addEventListener("click", function () {
   task.style.display = "block";
 });
 
+// //edit button
+
+// var editButton = document.querySelector(".edit-button");
+
+// if (editButton) {
+//   editButton.addEventListener("click", function (event) {
+//     retrievedId = editButton.parentElement.id;
+//     console.log(retrievedId);
+
+//     event.preventDefault();
+//   });
+// }
+// //remove button
 
 
 // Auth
