@@ -17,17 +17,42 @@
   </head>
 
   <body>
-    <div id="main-screen">
+    <div id="main-screen" role="main">
       <div class="container-1">
         <div class="product-name">
           <h1>the name</h1>
-          <h3>a short phrase</h3>
+          <p id="subtitle">a short phrase</p>
         </div>
 
         <div class="tasks">
           <h2>Tasks</h2>
-          <p>I want to be done by 8:00 PM</p>
-          <ul>
+          <form id="start-end">
+          <p>
+            I want to start at <input type="time">
+            and end by <input type="time">.
+          </p>
+          <input type="submit" value="Submit">
+          </form>
+          <form id="make-task">
+            <p>
+              I want to <input 
+                type="text"
+                name='activity name'
+                placeholder='study for econ'> 
+              for <input
+                type="number"
+                name='duration'
+                placeholder='1.5'
+                min=0 max=24>
+              hours <select name="time-preference">
+                <option value='m'>in the morning</option>
+                <option value='no-pref'>(No preference)</option>
+              </select>.
+            </p>
+            <input type='submit' value='Submit'>
+          </form>
+          
+          <div id="task-items-container">
             <div class="one-task">
               <div class="upper">
                 <p>Do Yoga</p>
@@ -41,7 +66,7 @@
                 <img class="small-icon" src="images/pencil.png" />
               </div>
             </div>
-          </ul>
+          </div>
         </div>
       </div>
 
@@ -58,20 +83,16 @@
             <p>Sat. July 15th</p>
           </div>
         </div>
-
-        <div id="control">
-          <div class="buttons">
-            <button>
-              <img class="logo" src="images/plus.png" />
-              new task
-            </button>
-          </div>
+        <div class="buttons">
+          <button>
+            <img class="logo" src="images/plus.png" />
+            new task
+          </button>
+          <button id="save-button">
+            Generate schedule!
+          </button>
         </div>
-
-        <button id="save-button">save</button>
       </div>
     </div>
-
-    <script></script>
   </body>
 </html>
