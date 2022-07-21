@@ -1,21 +1,15 @@
 var start_end = document.getElementById("start-end");
-
-document
-  .querySelector("#start-end")
-  .addEventListener("submit", function (event) {
-    var start = start_end.start.value;
-    var end = start_end.end.value;
-    console.log(start);
-    console.log(end);
-    event.preventDefault();
-  });
+start_end.addEventListener("submit", function (event) {
+  var start = start_end.start.value;
+  var end = start_end.end.value;
+  console.log(start);
+  console.log(end);
+  event.preventDefault();
+});
 
 // adding tasks
-
-var task = document.getElementById("make-task");
-
+var taskItemsContainer = document.getElementById("task-items-container")
 var tasksList = [];
-
 function loadTasks() {
   if (!localStorage.tasksList) {
     return false;
@@ -25,12 +19,10 @@ function loadTasks() {
 
   for (i = 0; i < currentTasksList.length; i++) {
     //makes a new div with the content
-    var tasks = document.getElementById("task-items-container");
-    var new_div = document.createElement("div");
-    tasks.appendChild(new_div);
-    new_div.class = "one-task";
-    new_div.innerHTML =
-      '<div class="one-task"><div class="upper"> <p class="task-activity">' +
+    var aTask = document.createElement("div");
+    aTask.className = "one-task";
+    aTask.innerHTML =
+      '<div class="upper"> <p class="task-activity">' +
       currentTasksList[i].activity +
       '</p> <div class="duration-clock"> <p class="task-duration">' +
       currentTasksList[i].duration +
@@ -38,33 +30,44 @@ function loadTasks() {
       '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><img class="small-icon" src="images/pencil.png" /></div></div>';
+      '</p><img class="small-icon" src="images/pencil.png" /></div>';
+    taskItemsContainer.appendChild(aTask);
+    
+    subtractFromTimeAvailable(parseFloat(currentTasksList[i].duration))
 
-    if (tasks.childElementCount > currentTasksList.length) {
-      for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {
-        tasks.removeChild(tasks.firstChild);
-      }
-    }
+    // if (taskItemsContainer.childElementCount > currentTasksList.length) {
+    //   for (n = 0; taskItemsContainer.childElementCount - currentTasksList.length; n++) {
+    //     taskItemsContainer.removeChild(taskItemsContainer.firstChild);
+    //   }
+    // }
   }
 }
 
-document
-  .querySelector("#make-task")
-  .addEventListener("submit", function (event) {
-    var oneTask = {
-      activity: document.getElementById("activity").value,
-      duration: document.getElementById("duration").value,
-      preference: document.getElementById("preference").value,
-      date: "July 5th",
-    };
+var task = document.getElementById("make-task");
+task.addEventListener("submit", function (event) {
+  var oneTask = {
+    activity: document.getElementById("activity").value,
+    duration: document.getElementById("duration").value,
+    preference: document.getElementById("preference").value,
+    date: "July 5th",
+  };
 
-    tasksList[tasksList.length] = oneTask;
-    localStorage.tasksList = JSON.stringify(tasksList);
-    loadTasks();
-    task.style.display = "none";
-    event.preventDefault();
-    return false;
-  });
+  tasksList.push(oneTask);
+  localStorage.tasksList = JSON.stringify(tasksList);
+  loadTasks();
+  task.style.display = "none";
+  event.preventDefault();
+  return false;
+});
+
+
+var timeAvailable = document.getElementById("num-hours-left")
+function subtractFromTimeAvailable(taskDuration){
+  currentTimeLeft = parseFloat(timeAvailable.innerText)
+  currentTimeLeft -= taskDuration
+  currentTimeLeft = Math.round(currentTimeLeft * 10) / 10
+  timeAvailable.innerText = currentTimeLeft
+}
 
 document.querySelector("#new-task").addEventListener("click", function () {
   task.style.display = "block";
@@ -80,5 +83,5 @@ window.onload = function() {
       console.log(token);
     });
   });
+  loadTasks();
 };
-loadTasks();
