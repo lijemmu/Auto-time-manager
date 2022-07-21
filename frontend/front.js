@@ -40,7 +40,7 @@ function loadTasks() {
       '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><button class="edit-button"> <img class="small-icon" src="images/trash_can.png"></button></div></div>';
+      '</p><button class="delete-button"> <img class="small-icon" src="images/trash_can.png"></button></div></div>';
 
     if (tasks.childElementCount > currentTasksList.length) {
       for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {
@@ -88,6 +88,8 @@ document.querySelector("#new-task").addEventListener("click", function () {
 //   });
 // }
 // //remove button
+
+//delete button
 
 // Auth
 
