@@ -28,8 +28,8 @@
           <h2>Tasks</h2>
           <form id="start-end">
             <p>
-              I want to start at <input type="time" name="start" /> and end by
-              <input type="time" name="end" />.
+              I want to start at <input type="time" id="start" /> and end by
+              <input type="time" id="end" />
             </p>
             <input type="submit" value="Submit" />
           </form>
@@ -37,22 +37,18 @@
           <form id="make-task" style="display: none">
             <p>
               I want to
-              <input
-                type="text"
-                name="activity name"
-                placeholder="study for econ"
-              />
+              <input type="text" id="activity" placeholder="study for econ" />
               for
               <input
                 type="number"
-                name="duration"
+                id="duration"
                 placeholder="1.5"
                 min="0"
                 max="24"
               />
               hours
-              <select name="time-preference">
-                <option value="m">in the morning</option>
+              <select id="preference">
+                <option value="morning">in the morning</option>
                 <option value="no-pref">(No preference)</option></select
               >.
             </p>
@@ -62,14 +58,14 @@
           <div id="task-items-container">
             <div class="one-task">
               <div class="upper">
-                <p>Do Yoga</p>
+                <p class="task-activity">Do Yoga</p>
                 <div class="duration-clock">
-                  <p>1h</p>
+                  <p class="task-duration">1h</p>
                   <img class="small-icon" src="images/clock.png" />
                 </div>
               </div>
               <div class="lower">
-                <p>July 5th, 5:00 PM - 5:00 PM</p>
+                <p class="task-time">July 5th, 5:00 PM - 5:00 PM</p>
                 <img class="small-icon" src="images/pencil.png" />
               </div>
             </div>
