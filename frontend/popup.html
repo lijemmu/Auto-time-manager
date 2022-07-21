@@ -27,31 +27,38 @@
         <div class="tasks">
           <h2>Tasks</h2>
           <form id="start-end">
-          <p>
-            I want to start at <input type="time">
-            and end by <input type="time">.
-          </p>
-          <input type="submit" value="Submit">
-          </form>
-          <form id="make-task">
             <p>
-              I want to <input 
-                type="text"
-                name='activity name'
-                placeholder='study for econ'> 
-              for <input
-                type="number"
-                name='duration'
-                placeholder='1.5'
-                min=0 max=24>
-              hours <select name="time-preference">
-                <option value='m'>in the morning</option>
-                <option value='no-pref'>(No preference)</option>
-              </select>.
+              I want to start at <input type="time" name="start" /> and end by
+              <input type="time" name="end" />.
             </p>
-            <input type='submit' value='Submit'>
+            <input type="submit" value="Submit" />
           </form>
-          
+
+          <form id="make-task" style="display: none">
+            <p>
+              I want to
+              <input
+                type="text"
+                name="activity name"
+                placeholder="study for econ"
+              />
+              for
+              <input
+                type="number"
+                name="duration"
+                placeholder="1.5"
+                min="0"
+                max="24"
+              />
+              hours
+              <select name="time-preference">
+                <option value="m">in the morning</option>
+                <option value="no-pref">(No preference)</option></select
+              >.
+            </p>
+            <input type="submit" value="Submit" />
+          </form>
+
           <div id="task-items-container">
             <div class="one-task">
               <div class="upper">
@@ -84,15 +91,15 @@
           </div>
         </div>
         <div class="buttons">
-          <button>
+          <button id="new-task">
             <img class="logo" src="images/plus.png" />
             new task
           </button>
-          <button id="save-button">
-            Generate schedule!
-          </button>
+          <button id="save-button">Generate schedule!</button>
         </div>
       </div>
     </div>
+
+    <script src="front.js"></script>
   </body>
 </html>
