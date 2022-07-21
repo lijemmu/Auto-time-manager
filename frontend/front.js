@@ -70,4 +70,15 @@ document.querySelector("#new-task").addEventListener("click", function () {
   task.style.display = "block";
 });
 
+
+
+// Auth
+
+window.onload = function() {
+  document.getElementById('auth').addEventListener('click', function() {
+    chrome.identity.getAuthToken({interactive: true}, function(token) {
+      console.log(token);
+    });
+  });
+};
 loadTasks();
