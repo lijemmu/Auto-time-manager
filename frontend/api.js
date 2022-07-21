@@ -1,5 +1,8 @@
 // first step: grab calendar data from API concerning the events already in the user's calendar for the day
-
+function getCalendarData(){
+    // use get method from calendar object; requires authorization (OAuth?)
+    return;
+}
 
 
 // function: format data from user's calendar into JSON to send to Flask app
@@ -46,7 +49,10 @@ function extractTime(datetime){
 
 
 // post the data to the calendar API to update the user's calendar
-
+function postToCalendar(schedule){
+    // will need the calendar ID and some authorization (OAuth?)
+    return;
+}
 
 // maybe alert the user on the frontend that the task was successful (or if there was an error)
 
@@ -65,3 +71,7 @@ function extractTime(datetime){
 //     'test': ['2022-07-20T12:05:00-04:00', '2022-07-20T11:50:00-04:00', 'America/New_York', '10'], 
 //     'work on project': ['2022-07-20T11:40:00-04:00', '2022-07-20T11:10:00-04:00', 'America/New_York', '10']
 // }
+
+
+
+// do we go with plain JS or node.js for communicating with the Google Calendar API?
