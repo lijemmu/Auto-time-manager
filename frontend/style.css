@@ -17,6 +17,11 @@ h1 {
   background-clip: text;
 }
 
+h2 {
+  color: #2d6858;
+  font-size: 35px;
+}
+
 html {
   background-color: white;
 }
