@@ -37,10 +37,10 @@ function loadTasks() {
       '</p> <div class="duration-clock"> <p class="task-duration">' +
       currentTasksList[i].duration +
       "h" +
-      '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower" id ="bambino"><p class="task-time">' +
+      '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><button class="edit-button"> <img class="small-icon" src="images/pencil.png"></button></div></div>';
+      '</p><button class="edit-button"> <img class="small-icon" src="images/trash_can.png"></button></div></div>';
 
     if (tasks.childElementCount > currentTasksList.length) {
       for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {
@@ -75,7 +75,7 @@ document.querySelector("#new-task").addEventListener("click", function () {
   task.style.display = "block";
 });
 
-// //edit button
+// edit button
 
 // var editButton = document.querySelector(".edit-button");
 
@@ -97,5 +97,6 @@ window.onload = function () {
       console.log(token);
     });
   });
+
+  loadTasks();
 };
-loadTasks();
