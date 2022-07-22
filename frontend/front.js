@@ -76,6 +76,14 @@ document
     return false;
   });
 
+var timeAvailable = document.getElementById("num-hours-left")
+function subtractFromTimeAvailable(taskDuration){
+  currentTimeLeft = parseFloat(timeAvailable.innerText)
+  currentTimeLeft -= taskDuration
+  currentTimeLeft = Math.round(currentTimeLeft * 10) / 10
+  timeAvailable.innerText = currentTimeLeft
+}
+
 document.querySelector("#new-task").addEventListener("click", function () {
   loadTasks();
   task.style.display = "block";
