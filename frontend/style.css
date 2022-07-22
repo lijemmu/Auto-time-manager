@@ -1,22 +1,30 @@
 h1 {
   width: 310px;
-  height: 77px;
+  height: 130px;
   left: 66px;
-  top: 85px;
+  bottom: 0px;
+  margin-bottom: 0px;
+  padding: 0xp 0px 0px 0px;
   font-family: "Pacifico", cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 70px;
   display: flex;
   align-items: center;
   text-align: center;
-  background: linear-gradient(90deg, #d0ed91 15%, rgba(45, 104, 88, 0) 103.39%);
+  background: linear-gradient(
+    90deg,
+    #d0ed91 15%,
+    rgba(122, 171, 114, 0.479167) 61.03%,
+    rgba(45, 104, 88, 0) 103.39%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-color: #9bbd8b;
 }
 
-#login-page {
+#login {
   width: 600px;
   height: 600px;
 }
@@ -24,17 +32,19 @@ h1 {
 #subtitle {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 200;
+  font-size: 17px;
   display: flex;
   align-items: center;
-  color: #b5d0b8;
+  color: #7fa483;
   height: 10px;
+  width: 280px;
 }
 
 h2 {
-  color: #2d6858;
-  font-size: 35px;
+  color: #638967;
+  font-size: 30px;
+  font-weight: 500px;
 }
 
 html {
@@ -60,7 +70,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 30px;
   margin-left: 40px;
 }
 
@@ -89,67 +98,164 @@ body {
 }
 
 .small-icon {
-  max-width: 15px;
+  max-width: 18px;
   max-height: auto;
   object-fit: contain;
   background-color: transparent;
+  margin-left: 5px;
 }
 
 .duration-clock {
+  width: 45px;
+  height: 30px;
+  border: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-
-.upper,
-.lower {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .upper {
-  height: 45px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 19px;
+  line-height: 0px;
+  height: 30px;
+  padding: 0px;
+  margin-left: 14px;
+  margin-right: 16px;
+}
+
+.task-activity {
+  text-align: center;
 }
 
 .lower {
-  height: 30px;
-  font-size: 13px;
+  margin-bottom: 15px;
+  height: 25px;
+  font-size: 14px;
+  margin-left: 14px;
+  margin-right: 16px;
+}
+
+#make-task {
+  width: 250px;
+  height: 100px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: transparent;
+  background-color: #7fa483;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 15px 15px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+
+#activity,
+#duration,
+#preference {
+  border: white;
+  border-width: 3px;
+  background-color: #b0cb8d;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: white;
 }
 
 .one-task {
-  width: 274px;
-  height: 80px;
+  width: 250px;
+  height: 60px;
   border-style: solid;
   border-radius: 20px;
   font-family: "Inter", sans-serif;
   color: white;
-  background-color: #59ba89;
+  border-color: transparent;
+  background-color: #b0cb8d;
+  padding: 15px 15px 15px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#start-end {
+  width: 280px;
+  height: 60px;
+  font-family: "Inter", sans-serif;
   padding: 15px 15px;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .buttons {
+  height: 100px;
+  margin-top: 25px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#new-task {
+  background-color: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  font-family: "Inter";
+  color: #1f4a3f;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type="submit"] {
+  background-color: white;
+  border-radius: 10px;
+  width: 60px;
+  height: 30px;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Inter";
+  color: #1f4a3f;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #save-button {
+  background-color: white;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  align-content: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Inter";
+  color: #1f4a3f;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .tasks {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 .time-content {
-  width: 200px;
-  height: 220px;
+  width: 220px;
+  height: 260px;
   left: 510px;
   top: 54px;
   background: #ffffff;
@@ -164,34 +270,48 @@ body {
 }
 
 #time-left {
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 110px;
+  min-height: 110px;
   border: 5px solid #c8e192;
   border-radius: 50%;
   align-content: center;
-  color: #418b77;
+  margin-top: 10px;
+  color: #7fa483;
   font-weight: 700;
   padding: 0px 0px 0px 0px;
   font-size: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .current-date {
   height: 80px;
   width: 150px;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 34px;
   display: flex;
   align-items: center;
   text-align: center;
-  color: #2d6858;
-  margin-top: 10px;
+  color: #638967;
+  margin-top: 20px;
 }
 
 .time-hours {
-  font-size: 35px;
-  height: 38px;
-  line-height: 10px;
+  font-size: 39px;
+  height: 30px;
+  line-height: 1px;
+  margin-bottom: 5px;
+}
+
+#login-main-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#initial-input {
+  margin-top: 50px;
+  text-align: center;
 }

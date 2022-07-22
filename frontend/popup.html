@@ -19,19 +19,12 @@
     <div id="main-screen" role="main">
       <div class="container-1">
         <div class="product-name">
-          <h1>the name</h1>
-          <p id="subtitle">a short phrase</p>
+          <h1>timeeely</h1>
+          <p id="subtitle">organize, schedule, and get things done.</p>
         </div>
 
         <div class="tasks">
           <h2>Tasks</h2>
-          <form id="start-end">
-            <p>
-              I want to start at <input type="time" id="start" value="09:00"/> and end by
-              <input type="time" id="end" value="17:00"/>
-            </p>
-            <input type="submit" value="Submit" />
-          </form>
 
           <form id="make-task" style="display: none">
             <p>
@@ -49,8 +42,9 @@
               hours
               <select id="preference">
                 <option value="morning">in the morning</option>
-                <option value="no-pref">no preference</option></select
-              >.
+                <option value="no-pref">(No preference)</option>
+              </select>
+
             </p>
             <input type="submit" value="Submit" />
           </form>
@@ -72,8 +66,9 @@
         </div>
         <div class="buttons">
           <button id="new-task">
-            <img class="logo" src="images/plus.png" />
-            New task
+            <img class="small-icon" src="images/plus.png" />
+            new task
+        
           </button>
           <button id="save-button">Generate schedule!</button>
         </div>
