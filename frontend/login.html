@@ -15,9 +15,25 @@
     <script src="login.mjs" type="module"></script>
 
   </head>
+  <body id="login">
+    <div id="login-main-screen" role="main">
+      <div class="product-name">
+        <h1>timeeely</h1>
+        <p id="subtitle">organize, schedule, and get things done.</p>
+      </div>
 
-  <body>
-    <button id="login">Auth</button>
+      <form id="initial-input">
+        <p>I want to plan for <input type="date" id="user-date" /></p>
+        <p>
+          I want to start at <input type="time" id="start" /> and end by
+          <input type="time" id="end" />
+        </p>
+        <input type="submit" value="Start Planning" />
+      </form>
+    </div>
+    
+    
+     <button id="login">Auth</button>
     <pre id="content" style="white-space: pre-wrap;"></pre>
     <a href="popup.html">Main popup</a>
 
