@@ -4,6 +4,10 @@ let gisInited = false;
 
 let userData;
 let userToken;
+export {
+    userToken,
+    userData as calendarSchedule
+};
 // Auth
 
 
@@ -175,8 +179,3 @@ function post_event(event){
             return data
         });
 }
-
-
-
-
-export {userToken, userData as calendarSchedule}
