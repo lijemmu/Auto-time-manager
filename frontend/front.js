@@ -30,6 +30,8 @@ function loadTasks() {
     var new_div = document.createElement("div");
     tasks.appendChild(new_div);
     new_div.class = "one-task";
+    //new_div.id = currentTasksList[i].id.toString();
+
     new_div.innerHTML =
       '<div class="one-task"><div class="upper"> <p class="task-activity">' +
       currentTasksList[i].activity +
@@ -39,7 +41,7 @@ function loadTasks() {
       '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><img class="small-icon" src="images/pencil.png" /></div></div>';
+      '</p><button class="delete-button"> <img class="small-icon" src="images/trash_can.png"></button></div></div>';
 
     if (tasks.childElementCount > currentTasksList.length) {
       for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {
@@ -52,6 +54,14 @@ function loadTasks() {
 document
   .querySelector("#make-task")
   .addEventListener("submit", function (event) {
+    if (!localStorage.tasksList) {
+      return false;
+    }
+
+    tasksList = JSON.parse(localStorage.tasksList);
+
+    //   var randomID = Math.random().toString(16).slice(2);
+
     var oneTask = {
       activity: document.getElementById("activity").value,
       duration: document.getElementById("duration").value,
@@ -67,36 +77,21 @@ document
     return false;
   });
 
+var timeAvailable = document.getElementById("num-hours-left")
+function subtractFromTimeAvailable(taskDuration){
+  currentTimeLeft = parseFloat(timeAvailable.innerText)
+  currentTimeLeft -= taskDuration
+  currentTimeLeft = Math.round(currentTimeLeft * 10) / 10
+  timeAvailable.innerText = currentTimeLeft
+}
+
 document.querySelector("#new-task").addEventListener("click", function () {
+  loadTasks();
   task.style.display = "block";
 });
 
 
 
-// Able to get data onto this page but not consistent since page is getting reloded alot
-
-// window.onload = function() {
-//     chrome.identity.getAuthToken({interactive: true}, function(token) {
-//       console.log(token);
-      
-//       let init = {
-//           method: 'GET',
-//           async: true,
-//           headers: {
-//             Authorization: 'Bearer ' + token,
-//             'Content-Type': 'application/json'
-//           },
-//           'contentType': 'json'
-//         };
-//         fetch(
-//           'https://www.googleapis.com/calendar/v3/calendars/primary/events?key=AIzaSyAwg3OYqKMlMeTlBDE7WgU3zzOnVZxrV1o',
-//           init)
-//           .then((response) => response.json())
-//           .then(function(data) {
-//             console.log(data)
-//           }).then(()=>window.location.href = "popup.html");
-
-
-          
-//     });
-// };
+window.onload = function () {
+  loadTasks();
+};
