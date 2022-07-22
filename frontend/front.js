@@ -1,3 +1,4 @@
+
 var start_end = document.getElementById("start-end");
 
 document
@@ -72,13 +73,30 @@ document.querySelector("#new-task").addEventListener("click", function () {
 
 
 
-// Auth
+// Able to get data onto this page but not consistent since page is getting reloded alot
 
-window.onload = function() {
-  document.getElementById('auth').addEventListener('click', function() {
-    chrome.identity.getAuthToken({interactive: true}, function(token) {
-      console.log(token);
-    });
-  });
-};
-loadTasks();
+// window.onload = function() {
+//     chrome.identity.getAuthToken({interactive: true}, function(token) {
+//       console.log(token);
+      
+//       let init = {
+//           method: 'GET',
+//           async: true,
+//           headers: {
+//             Authorization: 'Bearer ' + token,
+//             'Content-Type': 'application/json'
+//           },
+//           'contentType': 'json'
+//         };
+//         fetch(
+//           'https://www.googleapis.com/calendar/v3/calendars/primary/events?key=AIzaSyAwg3OYqKMlMeTlBDE7WgU3zzOnVZxrV1o',
+//           init)
+//           .then((response) => response.json())
+//           .then(function(data) {
+//             console.log(data)
+//           }).then(()=>window.location.href = "popup.html");
+
+
+          
+//     });
+// };

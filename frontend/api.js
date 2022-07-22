@@ -1,3 +1,8 @@
+// import {userToken, calendarSchedule} from "login.js"
+
+// console.log(userToken)
+// console.log(calendarSchedule)
+
 // first step: grab calendar data from API concerning the events already in the user's calendar for the day
 function getCalendarData() {
   // use get method from calendar object; requires authorization (OAuth?)
