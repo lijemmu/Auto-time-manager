@@ -24,7 +24,7 @@ function loadTasks() {
 
   var currentTasksList = JSON.parse(localStorage.tasksList);
 
-  for (i = 0; i < currentTasksList.length; i++) {
+  for (let i = 0; i < currentTasksList.length; i++) {
     //makes a new div with the content
     var tasks = document.getElementById("task-items-container");
     var new_div = document.createElement("div");

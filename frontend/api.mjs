@@ -1,4 +1,10 @@
-// import {userToken, calendarSchedule} from "login.js"
+// import {userToken, calendarSchedule} from "./login.mjs"
+
+// console.log("userToken:")
+// console.log(userToken)
+
+// console.log("calendarSchedule:")
+// console.log(calendarSchedule)
 
 // console.log(userToken)
 // console.log(calendarSchedule)

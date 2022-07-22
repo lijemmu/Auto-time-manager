@@ -2,23 +2,23 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-let userData 
-let userToken
+let userData;
+let userToken;
 // Auth
 
 
 // Dummy Data
 
 //   # recieved data
-startTime = '08:00'
-endTime = '23:00'
-margin = 10
+let startTime = '08:00'
+let endTime = '23:00'
+let margin = 10
 
-year = 2022
-month = 7
-day = 20
+let year = 2022
+let month = 7
+let day = 20
 
-sch = {
+let sch = {
     "bio": {
         "start": '10:00',
         "end": '11:00'
@@ -42,7 +42,7 @@ sch = {
 }
 
 //   # a dict that would get sent from user
-task = {
+let task = {
     "run": [30, "m"],
     "read": [15, "m"],
     "work on project": [30],
@@ -53,34 +53,36 @@ task = {
 }
 
 
-data = {
-    "startTime": startTime,
-    "endTime": endTime,
-    "margin": margin,
-    "year": year,
-    "month": month,
-    "day": day,
-    "sch": sch,
-    "task": task
-}
+// let data = {
+//     "startTime": startTime,
+//     "endTime": endTime,
+//     "margin": margin,
+//     "year": year,
+//     "month": month,
+//     "day": day,
+//     "sch": sch,
+//     "task": task
+// }
 
 
 
 
 
 window.onload = function() {
-    document.getElementById('login').addEventListener('click', function() {
+    let loginButton = document.getElementById('login')
+    console.log(loginButton)
+    loginButton.addEventListener('click', function() {
       chrome.identity.getAuthToken({interactive: true}, function(token) {
         // console.log(token);
         userToken = token
 
-        time = (new Date("7-22-22"))
-        timeMax = new Date(new Date(time).getTime() + 60 * 60 * 24 * 1000).toISOString();
-        timeMin = (new Date()).toISOString() 
+        let time = (new Date("7-22-22"))
+        let timeMax = new Date(new Date(time).getTime() + 60 * 60 * 24 * 1000).toISOString();
+        let timeMin = (new Date()).toISOString() 
 
 
-        readyTimeMin = encodeURIComponent(timeMin)
-        readyTimeMax = encodeURIComponent(timeMax)
+        let readyTimeMin = encodeURIComponent(timeMin)
+        let readyTimeMax = encodeURIComponent(timeMax)
 
         let init = {
             method: 'GET',
@@ -101,11 +103,11 @@ window.onload = function() {
             //   console.log(data)
               
               userData = data
-              userToken = token
+              console.log(userData)
             })
             // .then(()=>window.location.href = "popup.html");
 
-            generate(data)
+            // generate(data)
             
             
       });
@@ -177,4 +179,4 @@ function post_event(event){
 
 
 
-// export {userToken, userData as calendarSchedule}
+export {userToken, userData as calendarSchedule}
