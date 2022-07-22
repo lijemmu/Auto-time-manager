@@ -28,8 +28,8 @@
           <h2>Tasks</h2>
           <form id="start-end">
             <p>
-              I want to start at <input type="time" id="start" /> and end by
-              <input type="time" id="end" />
+              I want to start at <input type="time" id="start" value="09:00"/> and end by
+              <input type="time" id="end" value="17:00"/>
             </p>
             <input type="submit" value="Submit" />
           </form>
@@ -45,11 +45,12 @@
                 placeholder="1.5"
                 min="0"
                 max="24"
+                step="0.1"
               />
               hours
               <select id="preference">
                 <option value="morning">in the morning</option>
-                <option value="no-pref">(No preference)</option></select
+                <option value="no-pref">no preference</option></select
               >.
             </p>
             <input type="submit" value="Submit" />
@@ -63,19 +64,17 @@
         <div class="time-content">
           <div id="time-left">
             <div class="time-hours">
-              <p>5h</p>
+              <p><span id="num-hours-left">8</span>h</p>
             </div>
             <p>available</p>
           </div>
 
-          <div class="current-date">
-            <p>Sat. July 15th</p>
-          </div>
+          <p class="current-date">Sat. July 15th</p>
         </div>
         <div class="buttons">
           <button id="new-task">
             <img class="logo" src="images/plus.png" />
-            new task
+            New task
           </button>
           <button id="save-button">Generate schedule!</button>
         </div>
