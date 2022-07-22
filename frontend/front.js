@@ -1,15 +1,3 @@
-var start_end = document.getElementById("start-end");
-
-document
-  .querySelector("#start-end")
-  .addEventListener("submit", function (event) {
-    var start = start_end.start.value;
-    var end = start_end.end.value;
-    console.log(start);
-    console.log(end);
-    event.preventDefault();
-  });
-
 // adding tasks
 
 var task = document.getElementById("make-task");
@@ -40,7 +28,7 @@ function loadTasks() {
       '</p> <img class="small-icon" src="images/clock.png" /></div></div><div class="lower"><p class="task-time">' +
       "July 5th, " +
       currentTasksList[i].preference +
-      '</p><button class="delete-button"> <img class="small-icon" src="images/trash_can.png"></button></div></div>';
+      "</p></div></div>";
 
     if (tasks.childElementCount > currentTasksList.length) {
       for (n = 0; tasks.childElementCount - currentTasksList.length; n++) {

@@ -15,17 +15,20 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
 
-  <body>
-    <div id="main-screen" role="main">
+  <body id="login">
+    <div id="login-main-screen" role="main">
       <div class="product-name">
-        <h1>the name</h1>
-        <p id="subtitle">a short phrase</p>
+        <h1>timeeely</h1>
+        <p id="subtitle">organize, schedule, and get things done.</p>
       </div>
 
-      <form id="initial-info">
+      <form id="initial-input">
         <p>I want to plan for <input type="date" id="user-date" /></p>
-        <p>My time zone is <input type="text" id="time-zone" /></p>
-        <input type="submit" value="Submit" />
+        <p>
+          I want to start at <input type="time" id="start" /> and end by
+          <input type="time" id="end" />
+        </p>
+        <input type="submit" value="Start Planning" />
       </form>
     </div>
   </body>
