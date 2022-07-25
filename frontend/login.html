@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="login.mjs" type="module"></script>
+    <script defer src="login.js" type="text/javascript"></script>
 
   </head>
   <body id="login">
@@ -23,17 +23,17 @@
       </div>
 
       <form id="initial-input">
-        <p>I want to plan for <input type="date" id="user-date" /></p>
+        <p>I want to plan for <input type="date" name="user-date" required/></p>
         <p>
-          I want to start at <input type="time" id="start" /> and end by
-          <input type="time" id="end" />
+          I want to start at <input type="time" name="start" required/> and end by
+          <input type="time" name="end" required/>
         </p>
-        <input type="submit" value="Start Planning" />
+        <input id="login-button" type="submit" value="Start Planning" />
       </form>
     </div>
     
     
-     <button id="login">Auth</button>
+     <!-- <button id="login">Auth</button> -->
     <pre id="content" style="white-space: pre-wrap;"></pre>
     <a href="popup.html">Main popup</a>
 
