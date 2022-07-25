@@ -82,6 +82,6 @@ document.querySelector("#new-task").addEventListener("click", function () {
 
 window.onload = function () {
   console.log("User data, from front.js:");
-  console.log(userData);
+  console.log(typeof userData);
   loadTasks();
 };
