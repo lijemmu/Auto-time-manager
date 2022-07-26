@@ -36,7 +36,32 @@ function extractSchedule(calendarEvents) {
   return theSchedule;
 }
 
-// helper function that extracts time in the 'HH:MM' format from a datetime string
+// function: send tasks user created to Flask app, generate schedule, and post it to user's Google calendar
+function generate(data){
+
+  const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+  };
+  fetch('https://atm-back-end-api.herokuapp.com/api', requestOptions)
+      .then(async response => {
+          const data = await response.json()
+          // console.log(data)
+          create_events(data)
+      });
+
+}
+
+
+// ***********************************************************************
+//
+//                       HELPER FUNCTIONS
+//
+// ***********************************************************************
+
+
+// extracts time in the 'HH:MM' format from a datetime string
 function extractTime(datetime) {
   let dateOptions = {
     minimumIntegerDigits: 2,
@@ -50,17 +75,52 @@ function extractTime(datetime) {
   return `${theHour}:${theMinutes}`;
 }
 
-// function (triggered by button): send the data to Flask app
 
-// get the response from the Flask app, which should hopefully be JSON formatted to input directly into Google calendar
+// creates calendar events from a list of events retrieved from the backend
+function create_events(events){
 
-// post the data to the calendar API to update the user's calendar
-function postToCalendar(schedule) {
-  // will need the calendar ID and some authorization (OAuth?)
-  return;
+  for (const [key, value] of Object.entries(events)) {
+      // console.log(key, value)
+      const event = {
+                      "end": {
+                          "dateTime": value[0]
+                      },
+                      "start": {
+                          "dateTime": value[1]
+                      },
+                      "summary": key,
+                      "colorId": value[3]
+
+                  }
+      // console.log(JSON.stringify(event))
+      post_event(event)
+      // console.log("sent"+key)
+      
+  }
 }
 
-// maybe alert the user on the frontend that the task was successful (or if there was an error)
+// 0: "2022-07-20T22:10:00-04:00"
+// 1: "2022-07-20T20:10:00-04:00"
+
+
+// posts a calendar event (represented in JSON) to the user's Google Calendar
+function post_event(event){
+  const requestOptions = {
+      method: 'POST',
+      headers: { 
+          Authorization: 'Bearer ' + userToken,
+          'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(event)
+  };
+  fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events?key=AIzaSyAwg3OYqKMlMeTlBDE7WgU3zzOnVZxrV1o', requestOptions)
+      .then(async response => {
+          const data = await response.json()
+          console.log(data)
+          return data
+      });
+}
+
 
 // Dummy data
 // key = summary
@@ -74,5 +134,3 @@ function postToCalendar(schedule) {
 //     'test': ['2022-07-20T12:05:00-04:00', '2022-07-20T11:50:00-04:00', 'America/New_York', '10'],
 //     'work on project': ['2022-07-20T11:40:00-04:00', '2022-07-20T11:10:00-04:00', 'America/New_York', '10']
 // }
-
-// do we go with plain JS or node.js for communicating with the Google Calendar API?
