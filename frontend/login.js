@@ -80,42 +80,42 @@ if(loginForm){
         event.preventDefault();
 
         chrome.identity.getAuthToken({interactive: true}, function(token) {
-        // console.log(token);
-        userToken = token
+            // console.log(token);
+            localStorage['userToken'] = token
 
-        // console.log(loginForm.elements['user-date'])
-        console.log('Here')
+            // console.log(loginForm.elements['user-date'])
+            console.log('Here')
 
-        let time = (new Date('7-22-22')) // mm-dd-yyyy   yyyy-mm-dd
-        console.log(time)
-        let timeMax = new Date(new Date(time).getTime() + 60 * 60 * 24 * 1000).toISOString();
-        let timeMin = (new Date()).toISOString() 
-    
-    
-        let readyTimeMin = encodeURIComponent(time.toISOString())
-        let readyTimeMax = encodeURIComponent(timeMax)
-    
-        let init = {
-            method: 'GET',
-            async: true,
-            headers: {
-                Authorization: 'Bearer ' + token,
-                'Content-Type': 'application/json'
-            },
-            'contentType': 'json'
+            let time = (new Date('7-22-22')) // mm-dd-yyyy   yyyy-mm-dd
+            console.log(time)
+            let timeMax = new Date(new Date(time).getTime() + 60 * 60 * 24 * 1000).toISOString();
+            let timeMin = (new Date()).toISOString() 
+        
+        
+            let readyTimeMin = encodeURIComponent(time.toISOString())
+            let readyTimeMax = encodeURIComponent(timeMax)
+        
+            let init = {
+                method: 'GET',
+                async: true,
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                },
+                'contentType': 'json'
             };
             fetch(
                 'https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin='+readyTimeMin+'&timeMax='+readyTimeMax+'&key=AIzaSyAwg3OYqKMlMeTlBDE7WgU3zzOnVZxrV1o',
                 init
             ).then((response) => response.json()
             ).then(function(data) {
-            //   console.log(readyTimeMin)
-            //   console.log(readyTimeMax)
-            //   console.log(data)
+                //   console.log(readyTimeMin)
+                //   console.log(readyTimeMax)
+                //   console.log(data)
                 
-                userData = data
+                localStorage['userData'] = data
                 console.log('User data, from login.js:')
-                console.log(userData)
+                console.log(localStorage.getItem('userData'))
             }).then(()=>{
                 setTimeout(()=>{window.location.href = "popup.html";}, 5000);
             });
